@@ -12,6 +12,7 @@
  * @package Initial_Theme
  */
 
+//modified header.php: added search form, wrappers for flexbox and logo. custom styling in style.css
 get_header();
 ?>
 
