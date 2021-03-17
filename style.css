@@ -1186,3 +1186,53 @@ textarea {
 	font-size: 2rem;
 	font-weight: 300;
 }
+
+.single_post {
+	height: 250px;
+	width: 100%;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+.single_post h3 {
+	margin: 0rem;
+	box-sizing: border-box;
+	padding: 0.2rem;
+	background-color: #333;
+	color: white;
+	font-weight: normal;
+}
+
+.single_post-meta {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.5rem 0.2rem;
+}
+
+.single_post-meta-author {
+	display: flex;
+	align-items: center;
+}
+
+.single_post-meta span {
+	color: #ef3313;
+}
+
+.single_post-content {
+	width: 70%;
+	margin: 0 0.2rem;
+}
+
+.post-comments {
+	color: #ef3313;
+}
+
+.single_post-content p {
+	margin: 0px;
+}
+
+.single_post-content a {
+	color: #ef3313;
+	text-decoration: none;
+	margin: 0px;
+}

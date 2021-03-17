@@ -1,7 +1,7 @@
 <div class="image_gallery">
   <div class="image_gallery-text">
     <p class="image_gallery-texthead">D'SIGN IS THE SOUL</p>
-    <button class="image_gallery-btn">view all</button>
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>/sample-page"><button class="image_gallery-btn">view all</button></a>
   </div>
   <hr class="line-break">
   <div class="grid_container grid_container-columns-3">
