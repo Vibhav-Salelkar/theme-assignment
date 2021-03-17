@@ -31,4 +31,5 @@ get_header();
 
 <?php
 
+//customized footer with extra content and styles
 get_footer();
