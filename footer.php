@@ -27,7 +27,7 @@
 		</div>
 
 	</footer><!-- #colophon -->
-	<hr class="image_gallery-break">
+	<hr class="line-break">
 	<div class="site-info" style="width: 60%; margin: auto; text-align: center;">
 			<?php
 			/* translators: 1: Theme name, 2: Theme author. */

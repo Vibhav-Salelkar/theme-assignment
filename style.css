@@ -1118,7 +1118,7 @@ textarea {
 	align-items: center;
 }
 
-.image_gallery-break {
+.line-break {
 	width: 70%;
 	background-color: #333;
 	margin: 0.8rem auto 1rem auto;
@@ -1167,4 +1167,22 @@ textarea {
 	color: #ef3313;
 	text-decoration: none;
 	margin: 0px;
+}
+
+/* blog page */
+.blog-custom {
+	width: 70%;
+	margin: auto;
+	display: grid;
+	grid-column-gap: 2rem;
+	grid-template-columns: 2fr 1fr;
+}
+
+.blog-sidebar {
+	justify-self: end;
+}
+
+.blog-custom-title {
+	font-size: 2rem;
+	font-weight: 300;
 }
