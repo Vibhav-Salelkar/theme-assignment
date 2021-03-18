@@ -57,7 +57,7 @@
 				<div class="searchbox">
 						<label class="screen-reader-text" for="s">Search for:</label>
 						<input value="" name="s" id="s" type="text">
-						<button class="searchbtn" type="submit"><span class="dashicons dashicons-code-standards"></span></button>
+						<button class="searchbtn" type="submit"><span class="dashicons dashicons-search"></span></button>
 				</div>
 			</form>
 		</div>

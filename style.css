@@ -533,17 +533,18 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #333;
+	font-weight: bold;
 }
 
 a:visited {
-	color: #800080;
+	color: #333;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	color: #333;
 }
 
 a:focus {
@@ -982,6 +983,7 @@ textarea {
 .searchbox {
 	display: flex;
 	margin-left: 1rem;
+	height: 1.7rem;
 }
 
 .navbox {
@@ -989,10 +991,14 @@ textarea {
 }
 
 .searchbtn {
-	margin: 0px 0px 0px 0.5rem;
+	margin: 1px 0px 0px 0.5rem;
 	padding: 0px;
-	background-color: white;
+	background-color: rgb(84, 84, 84);
 	border: none;
+	width: 1.4rem;
+	height: 1.4rem;
+	border-radius: 100%;
+	color: white;
 }
 
 .custom-searchform {
@@ -1046,7 +1052,7 @@ textarea {
 /* features section */
 .features_container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	width: 70%;
 	margin: auto;
 	height: 7rem;
@@ -1078,7 +1084,7 @@ textarea {
 
 .features_flex-info p {
 	font-size: 0.7rem;
-	width: 15rem;
+	width: 13.5rem;
 	text-align: left;
 	font-weight: bold;
 	margin: 0px;
@@ -1088,7 +1094,7 @@ textarea {
 .grid_container {
 	margin: auto;
 	display: grid;
-	grid-gap: 1rem;
+	grid-gap: 1.5rem;
 	width: 70%;
 }
 
@@ -1132,7 +1138,6 @@ textarea {
 	width: 5rem;
 	height: 2rem;
 	border-radius: 5px;
-  margin-right: 0.8rem;
 	background-color: #333;
 	color: white;
 	font-size: 0.8rem;
@@ -1144,13 +1149,12 @@ textarea {
 	width: 70%;
 	margin: 3rem auto;
 	display: flex;
-	justify-content: space-between;
 }
 
 .footer_title {
 	margin: 0px;
-	font-size: 1.3rem;
-	font-weight: 500;
+	font-size: 1.4rem;
+	font-weight: 400;
 }
 
 .footer_info {
@@ -1160,6 +1164,10 @@ textarea {
 .footer_info p {
 	width: 80%;
 	margin-bottom: 0px;
+}
+
+.custom-footer-contact {
+	margin-left: -6rem;
 }
 
 .footer_info a {
