@@ -23,7 +23,7 @@
 			<h2 class="footer_title">Contact Us</h2>
 			<p>Street 21 Planet, A-11, dapibus tristique 123511<br>
 			Tel:123 456 7890 Fax:123 456789<br>
-			Email: <a style="color: #ef3313; text-decoration:none;" href="mailto:contactus@dsignfly.com">contactus@dsignfly.com</a></p>
+			Email: <a style="color: #ef3313; text-decoration:none;" href="mailto:contactus@dsignfly.com">contactus@dsignfly.com</a></p><br>
 			<img src="<?php echo  get_theme_file_uri(); ?>/assets/images/social.png" alt="social media icons">
 		</div>
 

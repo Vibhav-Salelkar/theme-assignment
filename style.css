@@ -700,11 +700,15 @@ textarea {
 }
 
 .main-navigation li {
+	font-size: 0.875rem;
+	font-weight: normal;
 	position: relative;
 	margin-left: 1rem;
 }
 
 .main-navigation a {
+	font-weight: 600;
+	color: #222;
 	display: block;
 	text-decoration: none;
 }
@@ -988,12 +992,21 @@ textarea {
 	justify-content: space-between;
 	width: 70%;
 	margin: auto;
+	height: 105px;
+	box-shadow: 5px;
 }
 
 .searchbox {
 	display: flex;
+	align-items: center;
 	margin-left: 1rem;
-	height: 1.7rem;
+}
+
+.searchbox-i {
+	width: 150px;
+	height: 1.25rem;
+	border-radius: 3px;
+	border: 1px solid var(--textcolor);
 }
 
 .navbox {
@@ -1021,7 +1034,8 @@ textarea {
 	background-repeat: no-repeat;
 	background-image: url("https://i.ibb.co/qWTtNWG/full-slider.png");
 	background-size: cover;
-	height: 500px;
+	height: 544px;
+	margin-bottom: 3px;
 }
 
 .slider {
@@ -1049,14 +1063,17 @@ textarea {
 }
 
 .slider-text h1 {
-	font-size: 3.8rem;
-	height: 4rem;
+	font-size: 4.375rem;
+	color: #fff;
+	text-shadow: 2px #950904;
+	margin-bottom: 0px;
 }
 
 .slider-text p {
-	font-size: 0.8rem;
-	width: 55%;
-	margin: auto;
+	font-size: 1rem;
+	width: 75%;
+	line-height: 24px;
+	margin: 0px auto;
 }
 
 /* features section */
@@ -1065,7 +1082,7 @@ textarea {
 	justify-content: space-between;
 	width: 70%;
 	margin: auto;
-	height: 7rem;
+	height: 6.313rem;
 	margin-bottom: 3rem;
 }
 
@@ -1075,28 +1092,34 @@ textarea {
 }
 
 .features_flex-img {
-	height: 2rem;
-	width: 2rem;
+	height: auto;
+	width: 3.125rem;
 }
 
 .features_flex-info {
 	display: flex;
 	flex-direction: column;
-	margin-left: 0.6rem;
+	margin-left: 1rem;
 }
 
 .features_flex-info h2 {
-	font-size: 1.2rem;
+	font-size: 1.25rem;
 	text-align: left;
 	margin: 0px;
-	color: #ef3313;
+	text-shadow: 2px #fff;
+	color: var(--secondarycolor);
+}
+
+.features_flex-info h2:hover {
+	color: #222;
 }
 
 .features_flex-info p {
-	font-size: 0.7rem;
-	width: 13.5rem;
+	font-size: 0.813rem;
+	color: #333;
+	line-height: 19.5px;
+	width: 12rem;
 	text-align: left;
-	font-weight: bold;
 	margin: 0px;
 }
 
@@ -1119,9 +1142,9 @@ textarea {
 }
 
 .grid_container-img {
-	border-radius: 5px;
-	max-width: 330px;
-	height: 250px;
+	border-radius: 10px;
+	max-width: 300px;
+	height: 210px;
 }
 
 .image_gallery-text {
@@ -1135,22 +1158,23 @@ textarea {
 
 .line-break {
 	width: 70%;
-	background-color: #333;
+	background-color: var(--textcolor);
 	margin: 0.8rem auto 1rem auto;
 }
 
 .image_gallery-texthead {
-	font-size: 2rem;
+	font-size: 2.813rem;
+	color: var(--textcolor);
 	font-weight: 300;
+	text-shadow: 2px #fff;
 }
 
 .image_gallery-btn {
-	width: 5rem;
-	height: 2rem;
-	border-radius: 5px;
-	background-color: #333;
+	padding: 10px;
+	border-radius: 3px;
+	background-color: #222;
 	color: white;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	text-align: center;
 }
 
@@ -1163,16 +1187,22 @@ textarea {
 
 .footer_title {
 	margin: 0px;
-	font-size: 1.4rem;
+	font-size: 1.563rem;
 	font-weight: 400;
+	color: var(--textcolor);
+	text-shadow: 2px #fff;
 }
 
 .footer_info {
 	width: 60%;
 }
 
-.footer_info p {
+.footer_info p,
+.custom-footer-contact p {
 	width: 80%;
+	font-size: 0.875rem;
+	color: var(--textcolor);
+	line-height: 21px;
 	margin-bottom: 0px;
 }
 
@@ -1180,10 +1210,16 @@ textarea {
 	margin-left: -6rem;
 }
 
-.footer_info a {
-	color: #ef3313;
+.footer_info a,
+.custom-footer-contact a {
+	color: var(--secondarycolor);
 	text-decoration: none;
 	margin: 0px;
+	font-weight: normal;
+}
+
+.footer_info a:hover {
+	text-decoration: underline;
 }
 
 /* blog page */
@@ -1313,34 +1349,36 @@ textarea {
 }
 
 .paginate span {
-	padding: 0.1rem 0.4rem;
-	margin-right: 2rem;
+	width: 30px;
+	height: 30px;
+	color: #222;
+	font-size: 1rem;
+	border-radius: 3px;
+	text-align: center;
 }
 
-.paginate span:first-child {
-	background-color: rgb(240, 18, 83);
+.dashicons-controls-play {
+	margin-top: 0.2rem;
+}
+
+.paginate span:hover {
+	background-color: var(--secondarycolor);
 	color: white;
 }
 
 /* Portfolio Page */
 .portfolio-tabs {
 	color: white;
-	background-color: #333;
-	font-weight: normal;
+	background-color: #222;
+	font-size: 1rem;
 	border-radius: 5px;
-	padding-bottom: 0.5rem;
-	padding-top: 0.4rem;
+	font-weight: normal;
+	padding: 10px;
 	cursor: pointer;
 }
 
-.portfolio-tabs--highlight{
-	background-color: #ef3313;
-	color: white;
-	font-weight: normal;
-	border-radius: 5px;
-	padding-bottom: 0.5rem;
-	padding-top: 0.4rem;
-	cursor: pointer;
+.portfolio-tabs:hover {
+	background-color: var(--secondarycolor);
 }
 /* Individual post */
 .individual_post h1 {

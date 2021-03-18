@@ -56,7 +56,7 @@
 			<form role="search" method="get" id="searchform" class="custom-searchform" action="<?php echo home_url( '/' ); ?>">
 				<div class="searchbox">
 						<label class="screen-reader-text" for="s">Search for:</label>
-						<input value="" name="s" id="s" type="text">
+						<input class="searchbox-i" value="" name="s" id="s" type="text">
 						<button class="searchbtn" type="submit"><span class="dashicons dashicons-search"></span></button>
 				</div>
 			</form>

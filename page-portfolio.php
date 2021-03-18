@@ -22,7 +22,7 @@ get_header();
   <div>
     <a href="#"><button class="portfolio-tabs">Advertising</button></a>
     <a href="#"><button class="portfolio-tabs">Multimedia</button></a>
-    <a href="#"><button class="portfolio-tabs--highlight">Photography</button></a>
+    <a href="#"><button class="portfolio-tabs">Photography</button></a>
   </div>
 </div>
 <hr class="line-break" style="margin-top: -0.2rem;">
