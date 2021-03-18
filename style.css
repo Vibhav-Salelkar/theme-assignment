@@ -1236,8 +1236,9 @@ textarea {
 }
 
 .blog-custom-title {
-	font-size: 2rem;
+	font-size: 2.813rem;
 	font-weight: 300;
+	text-shadow: 2px #fff;
 }
 
 .single_post {
@@ -1250,8 +1251,9 @@ textarea {
 .single_post-header {
 	margin: 0rem;
 	box-sizing: border-box;
-	background-color: #333;
-	padding: 0.2rem 0;
+	background-color: #222;
+	height: 50px;
+	font-size: 1.25rem;
 	border-radius: 3px;
 	color: white;
 	font-weight: normal;
@@ -1266,9 +1268,15 @@ textarea {
 	margin-left: 1rem;
 }
 
-.single_post-date p{
+.date{
+	font-size: 1.563rem;
 	margin: 0;
 	padding: 0;
+}
+
+.month {
+	margin: -0.4rem 0 0 0;
+	font-size: 1rem;
 }
 
 .vl {
@@ -1276,10 +1284,12 @@ textarea {
   height: 100%;
 	padding: 2rem 0;
 	margin: 0 1rem;
+	opacity: 0.3;
 }
 
 .single_post-meta {
 	display: flex;
+	font-size: 13px;
 	justify-content: space-between;
 	margin: -2.2rem 0.2rem 0rem 0.2rem;
 	align-items: center;
@@ -1291,16 +1301,19 @@ textarea {
 }
 
 .single_post-meta span {
-	color: #ef3313;
+	color: var(--secondarycolor);
 }
 
 .single_post-content {
 	width: 100%;
+	font-size: 1rem;
+	line-height: 21px;
+	color: var(--textcolor);
 	margin: 0 0.2rem;
 }
 
 .post-comments {
-	color: #ef3313;
+	color: var(--secondarycolor);
 }
 
 .single_post-content p {
@@ -1308,8 +1321,9 @@ textarea {
 }
 
 .single_post-content a {
-	color: #ef3313;
+	color: var(--secondarycolor);
 	text-decoration: none;
+	font-size: 0.875rem;
 	font-weight: normal;
 	margin: 0px;
 }
@@ -1322,7 +1336,7 @@ textarea {
 .post-divider {
 	margin-top: -0.8rem;
 	margin-bottom: 0.5rem;
-	background-color: #ccc;
+	background-color: var(--textcolor);
 	border: 1px;
 }
 

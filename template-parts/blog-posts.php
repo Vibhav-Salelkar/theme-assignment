@@ -1,8 +1,8 @@
 <div class="single_post">
   <div class="single_post-header">
     <div class="single_post-date">
-      <p>22</p>
-      <p>DEC</p>
+      <p class="date">22</p>
+      <p class="month">DEC</p>
     </div>
     <div class="">
       <span class="vl"></span> Going to the place & making a case!
@@ -32,8 +32,8 @@
 <div class="single_post">
   <div class="single_post-header"  style="	background-color: #ef3313;">
     <div class="single_post-date">
-      <p>21</p>
-      <p>DEC</p>
+      <p class="date">21</p>
+      <p class="month">DEC</p>
     </div>
     <div class="">
       <span class="vl"></span> Achieve your grandest dreams!!
@@ -63,8 +63,8 @@
 <div class="single_post">
   <div class="single_post-header">
     <div class="single_post-date">
-      <p>19</p>
-      <p>DEC</p>
+      <p class="date">19</p>
+      <p class="month">DEC</p>
     </div>
     <div class="">
       <span class="vl"></span> I want to put a ding in the universe!
@@ -94,8 +94,8 @@
 <div class="single_post">
   <div class="single_post-header">
     <div class="single_post-date">
-      <p>18</p>
-      <p>DEC</p>
+      <p class="date">18</p>
+      <p class="month">DEC</p>
     </div>
     <div class="">
       <span class="vl"></span> It is time to pause and reflect..
@@ -125,8 +125,8 @@
 <div class="single_post">
   <div class="single_post-header">
     <div class="single_post-date">
-      <p>17</p>
-      <p>DEC</p>
+      <p class="date">17</p>
+      <p class="month">DEC</p>
     </div>
     <div class="">
       <span class="vl"></span> Blessed is who has found his work.
