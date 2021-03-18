@@ -13,5 +13,68 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<div class="sidebar_portfolio">
+		<h3 class="sidebar_portfolio-text">Portfolio</h1>
+		<hr class='sidebar-break'>
+		<div class="sidebar_portfolio-grid">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-3.png">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-4.png">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-5.png">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-6.png">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
+			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
+		</div>
+	</div>
+		<div class="sidebar_portfolio">
+			<h3 class="sidebar_portfolio-text">Popular Posts</h1>
+			<hr class='sidebar-break'>
+			<div class="sidebar_portfolio-g1">
+				<div class="popular-flex">
+					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
+					<div class="post-flex">
+						<p>Achieve your grandest dreams!!</p>
+						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
+					</div>
+				</div>
+				<div class="popular-flex">
+					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
+					<div class="post-flex">
+						<p>Achieve your grandest dreams!!</p>
+						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
+					</div>
+				</div>
+				<div class="popular-flex">
+					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-3.png">
+					<div class="post-flex">
+						<p>Achieve your grandest dreams!!</p>
+						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
+					</div>
+				</div>
+				<div class="popular-flex">
+					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-4.png">
+					<div class="post-flex">
+						<p>Achieve your grandest dreams!!</p>
+						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
+					</div>
+				</div>
+				<div class="popular-flex">
+					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-5.png">
+					<div class="post-flex">
+						<p>Achieve your grandest dreams!!</p>
+						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="sidebar_portfolio">
+				<h3 class="sidebar_portfolio-text">Archive</h1>
+				<hr class='sidebar-break'>
+				<div class="archive-s">
+					<p>> January 2021</p>
+					<p>> February 2021</p>
+				</div>
+			</div>
+	</div>
 </aside><!-- #secondary -->
