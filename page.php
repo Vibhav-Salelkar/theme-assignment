@@ -15,7 +15,9 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<?php get_template_part( 'template-parts/features-section', get_post_type() ); ?>
+
+	<main id="primary" class="site-main" style="width: 70%; margin: auto;">
 
 		<?php
 		while ( have_posts() ) :
@@ -34,5 +36,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
