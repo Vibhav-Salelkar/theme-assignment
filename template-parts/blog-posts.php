@@ -5,7 +5,7 @@
       <p>DEC</p>
     </div>
     <div class="">
-      <span class="vl"></span> Going to the place and making a case!
+      <span class="vl"></span> Going to the place & making a case!
     </div>
   </div>
   <div class="post-content">
@@ -23,7 +23,7 @@
       <hr class="post-divider">
       <div class="single_post-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .</p>
-        <a href="#">Read more</a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>/test-post">Read more</a>
       </div>
     </div>
  </div>

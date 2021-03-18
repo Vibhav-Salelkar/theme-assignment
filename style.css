@@ -1312,3 +1312,24 @@ textarea {
 	background-color: rgb(240, 18, 83);
 	color: white;
 }
+
+/* Portfolio Page */
+.portfolio-tabs {
+	color: white;
+	background-color: #333;
+	font-weight: normal;
+	border-radius: 5px;
+	padding-bottom: 0.5rem;
+	padding-top: 0.4rem;
+	cursor: pointer;
+}
+
+.portfolio-tabs--highlight{
+	background-color: #ef3313;
+	color: white;
+	font-weight: normal;
+	border-radius: 5px;
+	padding-bottom: 0.5rem;
+	padding-top: 0.4rem;
+	cursor: pointer;
+}
