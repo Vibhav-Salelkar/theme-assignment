@@ -711,6 +711,13 @@ textarea {
 	color: #222;
 	display: block;
 	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+
+.main-navigation li.current_page_item  a{
+	background-color: var(--secondarycolor);
+	color: #fff;
 }
 
 /* Small menu. */
@@ -1000,6 +1007,7 @@ textarea {
 	display: flex;
 	align-items: center;
 	margin-left: 1rem;
+	margin-top: 0.6rem;
 }
 
 .searchbox-i {
@@ -1143,8 +1151,8 @@ textarea {
 
 .grid_container-img {
 	border-radius: 10px;
-	max-width: 300px;
-	height: 210px;
+	max-width: 350px;
+	height: 230px;
 }
 
 .image_gallery-text {
