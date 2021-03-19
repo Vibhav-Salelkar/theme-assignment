@@ -1073,7 +1073,7 @@ textarea {
 .slider-text h1 {
 	font-size: 4.375rem;
 	color: #fff;
-	text-shadow: 2px #950904;
+	text-shadow: 2px 2px #950904;
 	margin-bottom: 0px;
 }
 
@@ -1114,7 +1114,7 @@ textarea {
 	font-size: 1.25rem;
 	text-align: left;
 	margin: 0px;
-	text-shadow: 2px #fff;
+	text-shadow: 2px 2px #fff;
 	color: var(--secondarycolor);
 }
 
@@ -1174,7 +1174,7 @@ textarea {
 	font-size: 2.813rem;
 	color: var(--textcolor);
 	font-weight: 300;
-	text-shadow: 2px #fff;
+	text-shadow: 2px 2px #fff;
 }
 
 .image_gallery-btn {
@@ -1235,25 +1235,27 @@ textarea {
 	width: 70%;
 	margin: auto;
 	display: grid;
-	grid-column-gap: 2rem;
 	grid-template-columns: 620px 1fr;
 }
 
 .blog-sidebar {
-	justify-self: end;
+	justify-self: center;
+	margin-left: -1.5rem;
 }
 
 .blog-custom-title {
 	font-size: 2.813rem;
 	font-weight: 300;
 	text-shadow: 2px #fff;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
 }
 
 .single_post {
 	height: 250px;
 	width: 100%;
 	box-sizing: border-box;
-	margin-bottom: 3rem;
+	margin-bottom: 1rem;
 }
 
 .single_post-header {
@@ -1383,6 +1385,11 @@ textarea {
 	margin-top: 0.2rem;
 }
 
+.paginate--current {
+	background-color: var(--secondarycolor);
+	color: white !important;
+}
+
 .paginate span:hover {
 	background-color: var(--secondarycolor);
 	color: white;
@@ -1407,6 +1414,7 @@ textarea {
 	font-size: 1.888rem;
 	color: var(--textcolor);
 	text-shadow: var(--textshadow);
+	margin-top: 0.5rem;
 }
 
 .individual_post-content p {
@@ -1450,7 +1458,7 @@ textarea {
 .form-i {
 	width: 195px;
 	height: 30px;
-	border:  1px solid var(--textcolor);
+	border:  1px solid var(--textcolor) !important;
 }
 
 .btnbox {
@@ -1567,4 +1575,94 @@ textarea {
 }
 .archive-s p:hover {
 	color: var(--secondarycolor);
+}
+
+
+
+/*modal*/
+.myImg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.myImg:hover {opacity: 0.7;}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  color: #333;
+}
+
+.modal-cap {
+	margin: 0rem;
+	text-align: center;
+	font-size: 0.7rem;
+	padding: 0.5rem 0;
+	color: var(--textcolor);
+}
+
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+.custom-modal {
+	background-color: white;
+	max-width: 400px;
+	padding: 0.7rem;
+	margin: 3rem auto auto auto;
+	width: 80%;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 8rem;
+  right: 33rem;
+  color: var(--textcolor);
+	background-color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }

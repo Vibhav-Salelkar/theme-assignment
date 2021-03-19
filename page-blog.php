@@ -32,7 +32,7 @@ get_header();
      </div>
 </div>
 <div class="paginate">
-  <span>1</span>
+  <span class="paginate--current">1</span>
   <span>2</span>
   <span>3</span>
   <span class="dashicons dashicons-controls-play"></span>
