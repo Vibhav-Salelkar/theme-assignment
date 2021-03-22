@@ -1561,12 +1561,13 @@ textarea {
 	margin: 0 0.2rem;
 }
 
-.post-comments {
+.post-comments, .post-comments a {
 	font-weight: normal;
 	font-size: 13px;
 	margin-bottom: 0.8rem;
 	color: var(--secondarycolor);
 }
+
 
 .single_post-content p {
 	margin: 0 0 0.5rem 0px;
@@ -1662,6 +1663,17 @@ textarea {
 		width: 100px;
 		height: 100px;
 		margin-bottom: 5rem;
+	}
+
+	.post_details_container {
+		width: 100%;
+	}
+
+	.post-comments, .post-comments a {
+		font-weight: normal;
+		font-size: 0.875rem;
+		margin-bottom: 0.8rem;
+		color: var(--secondarycolor);
 	}
 
 }

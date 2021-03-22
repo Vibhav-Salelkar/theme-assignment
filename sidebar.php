@@ -17,14 +17,27 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		<h3 class="sidebar_portfolio-text">Portfolio</h1>
 		<hr class='sidebar-break'>
 		<div class="sidebar_portfolio-grid">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-3.png">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-4.png">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-5.png">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-6.png">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
-			<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
+			<?php
+			$query_images_args = array(
+    'post_type'      => 'attachment',
+    'post_mime_type' => 'image',
+    'post_status'    => 'inherit',
+    'posts_per_page' => - 1,
+		);
+
+		$query_images = new WP_Query( $query_images_args );
+
+		$images = array();
+		foreach ( $query_images->posts as $image ) {
+		    $images[] = wp_get_attachment_url( $image->ID );
+		}
+		foreach($images as $image){
+			?>
+			<img class="sidebar_portfolio-gitem" src="<?php echo $image?>">
+			<?php
+			}
+			?>
+
 		</div>
 	</div>
 
@@ -35,82 +48,68 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<h3 class="sidebar_portfolio-text">Related Posts</h1>
 			<hr class='sidebar-break'>
 			<div class="sidebar_portfolio-g1">
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-3.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-4.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-5.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
+				<?php
+				$exclude = get_the_ID();
+
+				global $wp_query;
+				$exclude = $wp_query->post->ID;
+
+				$args = array( 'posts_per_page' => 5 );
+
+				$the_query = new WP_Query( $args );
+
+				if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						if( $exclude != get_the_ID() ) {
+								?>
+								<div class="popular-flex">
+									<img class="sidebar_portfolio-gitem" src="<?php
+									 $image=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail');
+									 echo $image[0];?>" alt="<?php the_title();?>">
+									<div class="post-flex">
+										<p><?php the_title(); ?></p>
+										<p class="post-flex-meta">by <span><?php the_author(); ?></span> on <?php the_time('j F, Y'); ?> </p>
+									</div>
+								</div>
+								<?php
+						}
+					endwhile;
+				else:
+					_e( 'Sorry, no posts matched your criteria.', 'wb_domain' );
+				endif;
+				wp_reset_postdata();
+				?>
 			</div>
 		</div>
+
 		<div class="sidebar_portfolio">
 			<h3 class="sidebar_portfolio-text">Recent Posts</h1>
 			<hr class='sidebar-break'>
 			<div class="sidebar_portfolio-g1">
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-3.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-4.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-5.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
+						<?php
+						$args = array( 'posts_per_page' => 3 );
+
+						$the_query = new WP_Query( $args );
+
+						if ( $the_query->have_posts() ) :
+						    while ( $the_query->have_posts() ) : $the_query->the_post();
+						      ?>
+									<div class="popular-flex">
+										<img class="sidebar_portfolio-gitem" src="<?php
+										 $image=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail');
+										 echo $image[0];?>" alt="<?php the_title();?>">
+										<div class="post-flex">
+											<p><?php the_title(); ?></p>
+											<p class="post-flex-meta">by <span><?php the_author(); ?></span> on <?php the_time('j F, Y'); ?> </p>
+										</div>
+									</div>
+						      <?php
+						    endwhile;
+						else:
+						    _e( 'Sorry, no posts matched your criteria.', 'wb_domain' );
+						endif;
+						wp_reset_postdata();
+						?>
 			</div>
 		</div>
 		<?php
@@ -121,41 +120,27 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<h3 class="sidebar_portfolio-text">Popular Posts</h1>
 			<hr class='sidebar-break'>
 			<div class="sidebar_portfolio-g1">
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
+
+					<!-- fileters posts based on view count: function written in function.php file -->
+					<?php
+					$popularpost = new WP_Query( array( 'posts_per_page' => 5, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+					while ( $popularpost->have_posts() ) : $popularpost->the_post();
+
+					?>
+					<div class="popular-flex">
+						<img class="sidebar_portfolio-gitem" src="<?php
+						 $image=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail');
+						 echo $image[0];?>" alt="<?php the_title();?>">
+						<div class="post-flex">
+							<p><?php the_title();?></p>
+							<p class="post-flex-meta">by <span><?php the_author(); ?></span> <?php the_time('j F, Y'); ?> </p>
+						</div>
 					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-3.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-4.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
-				<div class="popular-flex">
-					<img class="sidebar_portfolio-gitem" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-5.png">
-					<div class="post-flex">
-						<p>Achieve your grandest dreams!!</p>
-						<p class="post-flex-meta">by <span>Roben Sen</span> on 21 Dec 2021 </p>
-					</div>
-				</div>
+					<?php
+
+					endwhile;
+					?>
+
 			</div>
 		</div>
 		<div class="sidebar_portfolio">

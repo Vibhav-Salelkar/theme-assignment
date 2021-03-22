@@ -1,154 +1,49 @@
-<div class="single_post">
-  <div class="single_post-header">
-    <div class="single_post-date">
-      <p class="date">22</p>
-      <p class="month">DEC</p>
-    </div>
-    <div class="header-text">
-      <span class="vl"></span> Going to the place & making a case!
-    </div>
-  </div>
-  <div class="post-content">
-    <div class="post_img_container">
-      <img class="post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-2.png">
-    </div>
-    <div class="post_details_container">
-      <div class="single_post-meta">
-        <div class="single_post-meta-author">
-          <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
-        </div>
-        <p class="post-comments">12 comments</a></p>
-      </div>
-      <hr class="post-divider">
-      <div class="single_post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .</p>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>/test-post">Read more</a>
-      </div>
-    </div>
- </div>
-</div>
 
-<div class="single_post">
-  <div class="single_post-header"  style="	background-color: #ef3313;">
-    <div class="single_post-date">
-      <p class="date">21</p>
-      <p class="month">DEC</p>
-    </div>
-    <div class="">
-      <span class="vl"></span> Achieve your grandest dreams!!
-    </div>
-  </div>
-  <div class="post-content">
-    <div class="post_img_container">
-      <img class="post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-1.png">
-    </div>
-    <div class="post_details_container">
-      <div class="single_post-meta">
-        <div class="single_post-meta-author">
-          <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
-        </div>
-        <p class="post-comments">12 comments</a></p>
-      </div>
-      <hr class="post-divider">
-      <div class="single_post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .</p>
-        <a href="#">Read more</a>
-      </div>
-    </div>
- </div>
-</div>
+<?php
+$args = array( 'posts_per_page' => 5 );
 
-<div class="single_post">
-  <div class="single_post-header">
-    <div class="single_post-date">
-      <p class="date">19</p>
-      <p class="month">DEC</p>
-    </div>
-    <div class="">
-      <span class="vl"></span> I want to put a ding in the universe!
-    </div>
-  </div>
-  <div class="post-content">
-    <div class="post_img_container">
-      <img class="post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-3.png">
-    </div>
-    <div class="post_details_container">
-      <div class="single_post-meta">
-        <div class="single_post-meta-author">
-          <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
-        </div>
-        <p class="post-comments">12 comments</a></p>
-      </div>
-      <hr class="post-divider">
-      <div class="single_post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .</p>
-        <a href="#">Read more</a>
-      </div>
-    </div>
- </div>
-</div>
+$the_query = new WP_Query( $args );
 
-<div class="single_post">
-  <div class="single_post-header">
-    <div class="single_post-date">
-      <p class="date">18</p>
-      <p class="month">DEC</p>
-    </div>
-    <div class="">
-      <span class="vl"></span> It is time to pause and reflect..
-    </div>
-  </div>
-  <div class="post-content">
-    <div class="post_img_container">
-      <img class="post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-6.png">
-    </div>
-    <div class="post_details_container">
-      <div class="single_post-meta">
-        <div class="single_post-meta-author">
-          <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
-        </div>
-        <p class="post-comments">12 comments</a></p>
+if ( $the_query->have_posts() ) :
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+      ?>
+     <div class="single_post">
+       <div class="single_post-header">
+         <div class="single_post-date">
+           <p class="date"><?php echo the_time('d'); ?></p>
+           <p class="month"><?php echo the_time('M'); ?></p>
+         </div>
+         <div class="header-text">
+           <span class="vl"></span> <?php the_title(); ?>
+         </div>
+       </div>
+       <div class="post-content">
+         <div class="post_img_container">
+           <img class="post-img" src="<?php
+            $image=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail');
+            echo $image[0];?>" alt="<?php the_title();?>">
+         </div>
+         <div class="post_details_container">
+           <div class="single_post-meta">
+             <div class="single_post-meta-author">
+               <h4 style="margin:0px; font-weight:normal;">by <span><?php the_author(); ?></span></h4>
+               <p style="margin:0px 0.3rem;">on <?php the_time('j F, Y'); ?></p>
+             </div>
+             <p class="post-comments"><a style="text-decoration: none;" href="<?php echo comments_link(); ?>"><?php echo get_comments_number();?> comments</a></p>
+           </div>
+           <hr class="post-divider">
+           <div class="single_post-content">
+             <div><?php the_excerpt(); ?></div>
+             <a href="<?php echo get_post_permalink(); ?>">Read more</a>
+           </div>
+         </div>
       </div>
-      <hr class="post-divider">
-      <div class="single_post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .</p>
-        <a href="#">Read more</a>
-      </div>
-    </div>
- </div>
-</div>
+     </div>
 
-<div class="single_post">
-  <div class="single_post-header">
-    <div class="single_post-date">
-      <p class="date">17</p>
-      <p class="month">DEC</p>
-    </div>
-    <div class="">
-      <span class="vl"></span> Blessed is who has found his work.
-    </div>
-  </div>
-  <div class="post-content">
-    <div class="post_img_container">
-      <img class="post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/image-5.png">
-    </div>
-    <div class="post_details_container">
-      <div class="single_post-meta">
-        <div class="single_post-meta-author">
-          <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
-        </div>
-        <p class="post-comments">12 comments</a></p>
-      </div>
-      <hr class="post-divider">
-      <div class="single_post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .</p>
-        <a href="#">Read more</a>
-      </div>
-    </div>
- </div>
-</div>
+      <?php
+    endwhile;
+else:
+    _e( 'Sorry, no posts matched your criteria.', 'wb_domain' );
+endif;
+wp_reset_postdata();
+?>
