@@ -22,11 +22,10 @@
 				<p class="post-comments">12 comments</a></p>
 			</div>
 			<hr class="post-divider">
-			<br>
 		</header>
 
 		<div class="individual_post-content">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			<p style="margin-top: 1rem;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 			<br>
 			<div class="individual_post-imgbox">
 				<img class="individual_post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/mountain.jpg" alt="mountain picture">
@@ -44,7 +43,6 @@
 			</p>
 			<br>
 			<p class="individual_post-tags">TAGS: <span>HTML, CSS, Javascript</span> </p>
-			<br>
 		</div>
 		<br>
 		<hr style='margin:0 0 0.2rem 0;'>

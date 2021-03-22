@@ -4,7 +4,7 @@
       <p class="date">22</p>
       <p class="month">DEC</p>
     </div>
-    <div class="">
+    <div class="header-text">
       <span class="vl"></span> Going to the place & making a case!
     </div>
   </div>
@@ -16,7 +16,7 @@
       <div class="single_post-meta">
         <div class="single_post-meta-author">
           <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.8rem;">On 21 Dec 2021</p>
+          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
         </div>
         <p class="post-comments">12 comments</a></p>
       </div>
@@ -47,7 +47,7 @@
       <div class="single_post-meta">
         <div class="single_post-meta-author">
           <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.8rem;">On 21 Dec 2021</p>
+          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
         </div>
         <p class="post-comments">12 comments</a></p>
       </div>
@@ -78,7 +78,7 @@
       <div class="single_post-meta">
         <div class="single_post-meta-author">
           <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.8rem;">On 21 Dec 2021</p>
+          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
         </div>
         <p class="post-comments">12 comments</a></p>
       </div>
@@ -109,7 +109,7 @@
       <div class="single_post-meta">
         <div class="single_post-meta-author">
           <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.8rem;">On 21 Dec 2021</p>
+          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
         </div>
         <p class="post-comments">12 comments</a></p>
       </div>
@@ -140,7 +140,7 @@
       <div class="single_post-meta">
         <div class="single_post-meta-author">
           <h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-          <p style="margin:0px 0.8rem;">On 21 Dec 2021</p>
+          <p style="margin:0px 0.3rem;">on 21 Dec 2021</p>
         </div>
         <p class="post-comments">12 comments</a></p>
       </div>

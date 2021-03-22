@@ -1007,7 +1007,7 @@ textarea {
 	display: flex;
 	align-items: center;
 	margin-left: 1rem;
-	margin-top: 0.3rem;
+	margin-top: 0.4rem;
 }
 
 .searchbox-i {
@@ -1015,6 +1015,11 @@ textarea {
 	height: 1.25rem;
 	border-radius: 3px;
 	border: 1px solid var(--textcolor);
+}
+
+.dashicons-search {
+	font-size: 0.8rem;
+	margin-top: 0.2rem;
 }
 
 .navbox {
@@ -1026,8 +1031,8 @@ textarea {
 	padding: 0px;
 	background-color: rgb(84, 84, 84);
 	border: none;
-	width: 1.4rem;
-	height: 1.4rem;
+	width: 1.23rem;
+	height: 1.23rem;
 	border-radius: 100%;
 	color: white;
 }
@@ -1255,7 +1260,7 @@ textarea {
 .line-break {
 	width: 70%;
 	background-color: var(--textcolor);
-	margin: 0.8rem auto 1rem auto;
+	margin: 1rem auto 1rem auto;
 }
 
 .image_gallery-texthead {
@@ -1494,12 +1499,14 @@ textarea {
 	box-sizing: border-box;
 	background-color: #222;
 	height: 50px;
+	border:  1px solid #fff;
 	font-size: 1.25rem;
 	border-radius: 3px;
 	color: white;
-	font-weight: normal;
+	font-weight: 300;
 	display: flex;
 	align-items: center;
+	padding: 1.6rem 0;
 }
 
 .single_post-date {
@@ -1510,14 +1517,14 @@ textarea {
 }
 
 .date{
-	font-size: 1.563rem;
+	font-size: 1.425rem;
 	margin: 0;
 	padding: 0;
 }
 
 .month {
 	margin: -0.4rem 0 0 0;
-	font-size: 1rem;
+	font-size: 0.875rem;
 }
 
 .vl {
@@ -1531,8 +1538,9 @@ textarea {
 .single_post-meta {
 	display: flex;
 	font-size: 13px;
+	color: var(--textcolor);
 	justify-content: space-between;
-	margin: -2.2rem 0.2rem 0rem 0.2rem;
+	margin: -1.7rem 0.2rem 0.2rem 0.2rem;
 	align-items: center;
 }
 
@@ -1547,18 +1555,21 @@ textarea {
 
 .single_post-content {
 	width: 100%;
-	font-size: 1rem;
+	font-size: 0.875rem;
 	line-height: 21px;
 	color: var(--textcolor);
 	margin: 0 0.2rem;
 }
 
 .post-comments {
+	font-weight: normal;
+	font-size: 13px;
+	margin-bottom: 0.8rem;
 	color: var(--secondarycolor);
 }
 
 .single_post-content p {
-	margin: 0px;
+	margin: 0 0 0.5rem 0px;
 }
 
 .single_post-content a {
@@ -1576,25 +1587,27 @@ textarea {
 
 .post-divider {
 	margin-top: -0.8rem;
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.7rem;
 	background-color: var(--textcolor);
-	border: 1px;
+	border: 0.5px solid var(--textcolor);
+	height: 0px;
 }
 
 .post-img {
 	border-radius: 5px;
-	margin-top: 2.3rem;
-	height: auto;
-	max-width: 100%;
+	height: 153px;
+	width: 220px;
 }
 
 .post_img_container {
-	width: 300px;
-	height: 200px;
+	width: 220px;
+	height: 153px;
+	margin-top: 1.3rem;
 }
 
 .post_details_container {
 	margin-left: 1rem;
+	width: 380px;
 }
 
 @media only screen and (max-width: 700px){
@@ -1661,7 +1674,7 @@ textarea {
 
 .paginate span {
 	width: 30px;
-	height: 30px;
+	height: 28px;
 	color: #222;
 	font-size: 1rem;
 	border-radius: 3px;
@@ -1961,7 +1974,15 @@ textarea {
   transition: 0.3s;
 }
 
-.myImg:hover {opacity: 0.7;}
+.myImg:hover {
+	opacity: 1;
+	-webkit-filter: brightness(40%);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
 
 .modal {
   display: none; /* Hidden by default */
@@ -1980,7 +2001,9 @@ textarea {
 .modal-content {
   margin: auto;
   display: block;
-  width: 90%;
+  width: 800px;
+	height: 460px;
+	border-radius: 5px;
 }
 
 #caption {
@@ -1995,8 +2018,9 @@ textarea {
 .modal-cap {
 	margin: 0rem;
 	text-align: center;
-	font-size: 0.7rem;
-	padding: 0.5rem 0;
+	font-size: 1.125rem;
+	padding: 0;
+	font-weight: 600;
 	color: var(--textcolor);
 }
 
@@ -2007,10 +2031,10 @@ textarea {
 
 .custom-modal {
 	background-color: white;
-	max-width: 400px;
-	padding: 0.7rem;
-	margin: 3rem auto auto auto;
-	width: 80%;
+	padding: 20px 20px 80px 20px;
+	margin: 0 auto;
+	width: 800px;
+	height: 560px;
 }
 
 @keyframes zoom {
@@ -2020,13 +2044,17 @@ textarea {
 
 .close {
   position: absolute;
-  top: 9.26rem;
-  right: 34rem;
-  color: var(--textcolor);
+  top: 6.26rem;
+  right: 20.3rem;
+  color: #333;
 	background-color: #fff;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 28px;
+	font-weight: 600;
   transition: 0.3s;
+	line-height: 2.2rem;
+	width: 35px;
+	height: 35px;
+	text-align: center;
 }
 
 .close:hover,
