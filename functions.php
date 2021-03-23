@@ -202,3 +202,23 @@ function wpb_track_post_views ($post_id) {
     wpb_set_post_views($post_id);
 }
 add_action( 'wp_head', 'wpb_track_post_views');
+
+
+
+function it_header_text($wp_customize) {
+	$wp_customize->add_section('it_header_text_section' ,array(
+		'title'=>'Header Text'
+	));
+
+	$wp_customize->add_setting('it_header_text_headline', array(
+		'default'=> "Gearing up the ideas"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_header_text_control' ,array(
+		'label'=>'Headline',
+		'section'=>'it_header_text_section',
+		 'settings'=>'it_header_text_headline'
+	)));
+}
+
+add_action('customize_register','it_header_text');
