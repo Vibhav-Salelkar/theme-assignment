@@ -214,10 +214,21 @@ function it_header_text($wp_customize) {
 		'default'=> "Gearing up the ideas"
 	));
 
-	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_header_text_control' ,array(
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_header_text_headline_control' ,array(
 		'label'=>'Headline',
 		'section'=>'it_header_text_section',
 		 'settings'=>'it_header_text_headline'
+	)));
+
+	$wp_customize->add_setting('it_header_text_desc', array(
+		'default'=> "Lorem ipsum dolor sit amet, consec Ut enim ad minim veniam, quis nostrud exercitation. ullam modo consequat. irure dolor in reperit in voluptate."
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_header_text_desc_control' ,array(
+		'label'=>'Description',
+		'section'=>'it_header_text_section',
+		'settings'=>'it_header_text_desc',
+		'type'=>'textarea'
 	)));
 }
 
