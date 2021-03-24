@@ -233,3 +233,74 @@ function it_header_text($wp_customize) {
 }
 
 add_action('customize_register','it_header_text');
+
+function it_footer_text($wp_customize) {
+	$wp_customize->add_section('it_footer_text_section' ,array(
+		'title'=>'Footer Text'
+	));
+
+	$wp_customize->add_setting('it_footer_text_headline', array(
+		'default'=> "Welcome to D'SIGNfly"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_headline_control' ,array(
+		'label'=>'Footer Title',
+		'section'=>'it_footer_text_section',
+		 'settings'=>'it_footer_text_headline'
+	)));
+
+	$wp_customize->add_setting('it_footer_text_desc', array(
+		'default'=> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_desc_control' ,array(
+		'label'=>'Description',
+		'section'=>'it_footer_text_section',
+		'settings'=>'it_footer_text_desc',
+		'type'=>'textarea'
+	)));
+
+	$wp_customize->add_setting('it_footer_text_contact_title', array(
+		'default'=> "Contact Us"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_contact_title_control' ,array(
+		'label'=>'Contact Title',
+		'section'=>'it_footer_text_section',
+		'settings'=>'it_footer_text_contact_title',
+	)));
+
+	$wp_customize->add_setting('it_footer_text_contact_desc', array(
+		'default'=> "Street 21 Planet, A-11, dapibus tristique 123511<br>
+		Tel:123 456 7890 Fax:123 456789"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_contact_desc_control' ,array(
+		'label'=>'Contact Info',
+		'section'=>'it_footer_text_section',
+		'settings'=>'it_footer_text_contact_desc',
+		'type'=>'textarea'
+	)));
+
+	$wp_customize->add_setting('it_footer_text_email', array(
+		'default'=> "contactus@dsignfly.com"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_email_control' ,array(
+		'label'=>'Email',
+		'section'=>'it_footer_text_section',
+		'settings'=>'it_footer_text_email',
+	)));
+
+	$wp_customize->add_setting('it_footer_text_email_link', array(
+		'default'=> "mailto:contactus@dsignfly.com"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_email_link_control' ,array(
+		'label'=>'Email Link',
+		'section'=>'it_footer_text_section',
+		'settings'=>'it_footer_text_email_link',
+	)));
+}
+
+add_action('customize_register','it_footer_text');
