@@ -29,25 +29,35 @@ get_header();
 <div class="grid_container grid_container-columns-3" style="margin-bottom: 2rem;">
   <?php
   $query_images_args = array(
-'post_type'      => 'attachment',
-'post_mime_type' => 'image',
-'post_status'    => 'inherit',
-'posts_per_page' => - 1,
-);
+  'post_type'      => 'it-portfolio',
+  'posts_per_page' => -1,
+  );
 
-$query_images = new WP_Query( $query_images_args );
+  $query = new WP_Query( $query_images_args );
 
-$images = array();
-foreach ( $query_images->posts as $image ) {
-    $images[] = wp_get_attachment_url( $image->ID );
-}
-foreach($images as $image){
-  ?>
-  <img class="myImg grid_container-item grid_container-img" src="<?php echo $image ?>">
+  if ( $query -> have_posts() ):
+    while ( $query -> have_posts() ):
+      $query -> the_post();
+      ?>
+  <img class="myImg grid_container-item grid_container-img" src="<?php
+            $image=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail');
+            echo $image[0];?>">
   <?php
-  }
+  endwhile;
+  ?>
+  <?php
+  else:
+  ?>
+  <div class="container">
+  <p>
+    <?php esc_html_e( 'Sorry, no portfolio items found. Add posts in portfolio posts in admin.')?>
+  </p>
+  </div>
+  <?php
+  endif;
   ?>
 </div>
+
 <div class="paginate">
   <span class="paginate--current">1</span>
   <span>2</span>

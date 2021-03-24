@@ -205,6 +205,58 @@ add_action( 'wp_head', 'wpb_track_post_views');
 
 
 
+
+//portfolio section
+function it_custom_post_type() {
+
+	$labels = array(
+			'name'           => esc_html__( 'Portfolio', 'it_domain' ),
+			'singular_name'  => esc_html__( 'Portfolio', 'it_domain' ),
+			'add_new'        => esc_html__( 'Add Portfolio Item', 'it_domain' ),
+			'all_items'      => esc_html__( 'All Portfolio Items', 'it_domain' ),
+			'add_new_item'   => esc_html__( 'Add Portfolio item', 'it_domain' ),
+			'edit_item'      => esc_html__( 'Edit Portfolio Item', 'it_domain' ),
+			'new_item'       => esc_html__( 'New Portfolio Item', 'it_domain' ),
+			'view_item'      => esc_html__( 'View Portfolio Item', 'it_domain' ),
+			'search_item'    => esc_html__( 'Search Portfolio Items', 'it_domain' ),
+			'not_found'      => esc_html__( 'No portfolio items found', 'it_domain' ),
+		'not_found_in_trash' => esc_html__( 'No portfolio items found in trash', 'it_domain' ),
+		'parent_item_colon'  => esc_html__( 'Parent Portfolio Item', 'it_domain' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'has_archive'        => true,
+		'publicly_queryable' => true,
+		'query_var'          => true,
+		'rewrite'            => true,
+		'capability_type'    => 'post',
+		'hierarchical'       => false,
+		'menu_icon'          => 'dashicons-format-image',
+		'supports'            => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'comments',
+			'revision',
+		),
+		'taxonomies'          => array( 'category', 'post_tag' ),
+		'menu_position'       => 5,
+		'exclude_from_search' => false,
+		'rewrite'             => array( 'slug' => 'it-portfolio' ),
+	);
+
+	register_post_type( 'it-portfolio', $args );
+}
+
+add_action( 'init', 'it_custom_post_type' );
+
+
+
+
+//customize settings
 function it_header_text($wp_customize) {
 	$wp_customize->add_section('it_header_text_section' ,array(
 		'title'=>'Header Text'
@@ -238,27 +290,6 @@ function it_footer_text($wp_customize) {
 	$wp_customize->add_section('it_footer_text_section' ,array(
 		'title'=>'Footer Text'
 	));
-
-	$wp_customize->add_setting('it_footer_text_headline', array(
-		'default'=> "Welcome to D'SIGNfly"
-	));
-
-	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_headline_control' ,array(
-		'label'=>'Footer Title',
-		'section'=>'it_footer_text_section',
-		 'settings'=>'it_footer_text_headline'
-	)));
-
-	$wp_customize->add_setting('it_footer_text_desc', array(
-		'default'=> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-	));
-
-	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_footer_text_desc_control' ,array(
-		'label'=>'Description',
-		'section'=>'it_footer_text_section',
-		'settings'=>'it_footer_text_desc',
-		'type'=>'textarea'
-	)));
 
 	$wp_customize->add_setting('it_footer_text_contact_title', array(
 		'default'=> "Contact Us"
@@ -301,6 +332,57 @@ function it_footer_text($wp_customize) {
 		'section'=>'it_footer_text_section',
 		'settings'=>'it_footer_text_email_link',
 	)));
+
+	$wp_customize -> add_setting( 'it_social_icons', array(
+		'default' => 'www.google.com,
+		www.facebook.com,
+		www.pinterest.com,
+		www.twitter.com,
+		www.linkedin.com'
+	) );
+
+	$wp_customize -> add_control( new WP_Customize_Control( $wp_customize, 'it_social_icons-control',
+	array(
+		'label'    => 'Social Links',
+		'section'  => 'it_footer_text_section',
+		'settings' => 'it_social_icons',
+		'type'     => 'textarea'
+	) ) );
 }
 
 add_action('customize_register','it_footer_text');
+
+function it_gallery($wp_customize) {
+	$wp_customize->add_section('it_gallery_section' ,array(
+		'title'=>'Gallery Settings'
+	));
+
+	$wp_customize->add_setting('it_gallery_headline', array(
+		'default'=> "D'SIGN IS THE SOUL"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_gallery_headline_control' ,array(
+		'label'=>'Gallery Headline',
+		'section'=>'it_gallery_section',
+		'settings'=>'it_gallery_headline'
+	)));
+
+	$wp_customize->add_setting('it_gallery_btn', array(
+		'default'=> ""
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_gallery_btn_control' ,array(
+		'label'=>'Description',
+		'section'=>'it_gallery_section',
+		'settings'=>'it_gallery_btn',
+		'type'=>'dropdown-pages'
+	)));
+}
+
+add_action('customize_register','it_gallery');
+
+//custom excerpt: refered wordpress docs
+function it_custom_excerpt_length( $length ) {
+    return 25;
+}
+add_filter( 'excerpt_length', 'it_custom_excerpt_length', 999 );

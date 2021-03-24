@@ -1,6 +1,7 @@
 
 <?php
-$args = array( 'posts_per_page' => 5 );
+$args = array(   'post_type' => 'it-portfolio',
+'posts_per_page' => 5 );
 
 $the_query = new WP_Query( $args );
 

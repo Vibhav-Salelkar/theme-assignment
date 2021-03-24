@@ -2082,3 +2082,17 @@ textarea {
     width: 100%;
   }
 }
+
+/*stylings for footer social icons*/
+.social_icons {
+	width: 100%;
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+.social_icons li {
+	margin: 0 0.4rem 0 0;
+	width: 2rem;
+	height: 2rem;
+}
