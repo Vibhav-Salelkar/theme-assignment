@@ -1858,6 +1858,16 @@ textarea {
 	margin: 0px;
 }
 
+.comment_card-reply p a{
+	text-decoration: none;
+	color: var(--textcolor);
+	font-size: 0.813rem;
+	margin: 0px;
+	line-height: 21px;
+	font-weight: 600;
+	text-transform: lowercase;
+}
+
 .comment_card-comment {
 	line-height: 21px;
 	font-size: 0.875rem;
@@ -1865,8 +1875,11 @@ textarea {
 	background-color: #fff;
 }
 
-.comment_card-author {
+.comment_card-author, .comment_card-author a {
 	color: var(--secondarycolor);
+	text-decoration: none;
+	font-size: 0.813rem;
+	font-weight: normal;
 }
 
 .comment_card-author:hover {
@@ -1880,6 +1893,12 @@ textarea {
 
 .fa {
 	color: #ccc;
+}
+
+.comment-list-custom {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 

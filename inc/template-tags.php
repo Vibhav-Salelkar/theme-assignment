@@ -163,3 +163,62 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+
+
+
+
+
+/*
+
+Custom comments design here:
+1. first designed static comment with html css
+2. then added dynamic template and assigned the classes accordingly
+
+<div>
+	<div class="comment_card">
+		<p class='comment_card-meta'><i class="fa fa-comment" aria-hidden="true"></i><span class="comment_card-author"> John Richards</span> said on October 12, 2020 at 11:49 am</p>
+		<p class="comment_card-comment"> <?php echo $comment->comment_content ?></p>
+		<div class="comment_card-reply">
+			<p><i class="fa fa-reply fa-flip-horizontal	" aria-hidden="true"></i> reply</p>
+		</div>
+	</div>
+</div>
+*/
+function it_custom_comments($comment, $args, $depth) {
+
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }
+	?>
+
+    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <?php if ( 'div' != $args['style'] ) : ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment_card">
+	<?php endif; ?>
+
+    <p class='comment_card-meta'><i class="fa fa-comment" aria-hidden="true"></i>
+        <?php printf( __( '<cite class="comment_card-author">%s</cite> <span class="says">said on %2$s at %3$s</span>' ), get_comment_author_link(), get_comment_date(),  get_comment_time()  ); ?>
+	</p>
+
+	<?php if ( $comment->comment_approved == '0' ) : ?>
+         <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+          <br />
+    <?php endif; ?>
+
+    <?php comment_text(); ?>
+
+    <div class="comment_card-reply">
+		<p class="comment_card-meta" style="text-decoration:none;"><i class="fa fa-reply fa-flip-horizontal	" aria-hidden="true"></i> <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></p>
+    </div>
+
+	<?php if ( 'div' != $args['style'] ) : ?>
+	</div>
+
+    <?php endif; ?>
+    <?php
+}

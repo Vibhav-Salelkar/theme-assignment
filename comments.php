@@ -26,38 +26,16 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
-			<?php
-			$initial_theme_comment_count = get_comments_number();
-			if ( '1' === $initial_theme_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'initial-theme' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $initial_theme_comment_count, 'comments title', 'initial-theme' ) ),
-					number_format_i18n( $initial_theme_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list-custom">
 			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
+			wp_list_comments( array(
+				'type' => 'comment',
+				'callback' => 'it_custom_comments'
+			) );
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list and callback function in template-tags.php -->
 
 		<?php
 		the_comments_navigation();
@@ -70,7 +48,7 @@ if ( post_password_required() ) {
 		endif;
 
 	endif; // Check for have_comments().
-
+	
 	comment_form();
 	?>
 

@@ -44,33 +44,14 @@
 		<hr style='margin:0 0 0.2rem 0;'>
 		<p style="margin:0px; font-size:1.125rem;">Comments</p>
 		<hr>
-		<div>
-			<div class="comment_card">
-				<p class='comment_card-meta'><i class="fa fa-comment" aria-hidden="true"></i><span class="comment_card-author"> John Richards</span> said on October 12, 2020 at 11:49 am</p>
-				<p class="comment_card-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<div class="comment_card-reply">
-					<p><i class="fa fa-reply fa-flip-horizontal	" aria-hidden="true"></i> reply</p>
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="comment_card">
-				<p class='comment_card-meta'><i class="fa fa-comment" aria-hidden="true"></i><span class="comment_card-author"> John Richards</span> said on October 12, 2020 at 11:49 am</p>
-				<p class="comment_card-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<div class="comment_card-reply">
-					<p><i class="fa fa-reply fa-flip-horizontal	" aria-hidden="true"></i> reply</p>
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="comment_card">
-				<p class='comment_card-meta'><i class="fa fa-comment" aria-hidden="true"></i><span class="comment_card-author"> John Richards</span> said on October 12, 2020 at 11:49 am</p>
-				<p class="comment_card-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<div class="comment_card-reply">
-					<p><i class="fa fa-reply fa-flip-horizontal	" aria-hidden="true"></i> reply</p>
-				</div>
-			</div>
-		</div>
+		<?php
+		// comment customization in comments.php
+		if ( comments_open() || get_comments_number() ) {
+			comments_template();
+		} else {
+		 echo 'No comments found.';
+		}
+		?>
 		<br>
 		<hr>
 		<p style="margin:0px; font-size:1.125rem;">Post your comment</p>
