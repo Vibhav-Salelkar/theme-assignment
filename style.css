@@ -1509,6 +1509,10 @@ textarea {
 	padding: 1.6rem 0;
 }
 
+.single_post-header:hover {
+	background-color: var(--secondarycolor);
+}
+
 .single_post-date {
 	display: flex;
 	flex-direction: column;
@@ -1553,6 +1557,10 @@ textarea {
 	color: var(--secondarycolor);
 }
 
+.single_post-meta span:hover {
+	text-decoration: underline;
+}
+
 .single_post-content {
 	width: 100%;
 	font-size: 0.875rem;
@@ -1579,6 +1587,10 @@ textarea {
 	font-size: 0.875rem;
 	font-weight: normal;
 	margin: 0px;
+}
+
+.single_post-content a:hover {
+	text-decoration: underline;
 }
 
 .post-content {
@@ -1775,11 +1787,15 @@ textarea {
 	margin-top: 0.5rem;
 }
 
-.individual_post-content p {
+.individual_post-content p  {
 	color: var(--textcolor);
 	font-size: var(--textcontentsize);
-	margin: 0;
+	margin-bottom: 0.8rem;
 	line-height: 21px;
+}
+
+.individual_post-content p img {
+	width: 100%;
 }
 
 .individual_post-imgbox {
@@ -2096,3 +2112,4 @@ textarea {
 	width: 2rem;
 	height: 2rem;
 }
+

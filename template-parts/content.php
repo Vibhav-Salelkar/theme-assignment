@@ -12,37 +12,33 @@
 <div class="blog-custom">
 	<div>
 		<header class="individual_post">
-			<h1>Going to the place & making a case!</h1>
+			<h1><?php the_title(); ?></h1>
 			<br>
 			<div class="single_post-meta">
 				<div class="single_post-meta-author">
-					<h4 style="margin:0px; font-weight:normal;">by <span>Robin Sen</span></h4>
-					<p style="margin:0px 0.8rem;">On 21 Dec 2020</p>
+					<h4 style="margin:0px; font-weight:normal;">by <span><?php the_author(); ?></span></h4>
+					<p style="margin:0px 0.8rem;">On <?php the_time('j F, Y'); ?></p>
 				</div>
-				<p class="post-comments">12 comments</a></p>
+				<p class="post-comments"><a style="text-decoration: none;" href="<?php echo comments_link(); ?>"><?php echo get_comments_number();?> comments</a></p>
 			</div>
 			<hr class="post-divider">
 		</header>
 
 		<div class="individual_post-content">
-			<p style="margin-top: 1rem;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-			<br>
-			<div class="individual_post-imgbox">
-				<img class="individual_post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/mountain.jpg" alt="mountain picture">
-			</div>
-			<br>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<br>
-			<div class="individual_post-imgbox">
-				<img class="individual_post-img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/river.jpg" alt="river picture">
-			</div>
-			<br>
-			<p style="margin:0px; color: #333;">Lorem ipsum tutle</p>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<p style="margin-top: 1rem;">
+			<?php the_content(); ?>
 			</p>
-			<br>
-			<p class="individual_post-tags">TAGS: <span>HTML, CSS, Javascript</span> </p>
+			<p class="individual_post-tags">TAGS: <span>
+			<?php
+				$posttags = get_the_tags();
+				if ($posttags) {
+				foreach($posttags as $tag) {
+					echo $tag->name . ', '; 
+				}
+				}
+				?>
+			</span> 
+			</p>
 		</div>
 		<br>
 		<hr style='margin:0 0 0.2rem 0;'>
