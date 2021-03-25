@@ -18,15 +18,16 @@ get_header();
 <!-- render features section -->
 <?php get_template_part( 'template-parts/features-section', get_post_type() ); ?>
 
-
 <div class="blog-custom">
-     <div class="blog-posts">
-          <h2 class="blog-custom-title">LET'S BLOG</h2>
-          <hr>
-          <div class="all-posts">
-            <?php get_template_part( 'template-parts/blog-posts', get_post_type() ); ?>
-          </div>
-     </div>
+    <div style="margin-left: 0.3rem;">
+      <div class="blog-posts">
+            <h2 class="blog-custom-title">LET'S BLOG</h2>
+            <hr>
+            <div class="all-posts">
+              <?php get_template_part( 'template-parts/blog-posts', get_post_type() ); ?>
+            </div>
+      </div>
+    </div>
      <div class="blog-sidebar">
        <?php get_sidebar(); ?>
      </div>

@@ -1435,12 +1435,12 @@ textarea {
 	width: 70%;
 	margin: auto;
 	display: grid;
-	grid-template-columns: 620px 1fr;
+	grid-template-columns: 680px 1fr;
 }
 
 .blog-sidebar {
 	justify-self: center;
-	margin-left: -1.5rem;
+	margin-left: 2.2rem;
 }
 
 .blog-custom-title {
@@ -1620,7 +1620,7 @@ textarea {
 
 .post_details_container {
 	margin-left: 1rem;
-	width: 380px;
+	width: 450px;
 }
 
 @media only screen and (max-width: 700px){
@@ -1869,7 +1869,7 @@ border-radius: initial;
 }
 
 .individual_post-textarea {
-	width: 620px;
+	width: 680px;
 	height: 90px;
 	border: 1px solid var(--textcolor);
 }
@@ -1908,7 +1908,7 @@ border-radius: initial;
 }
 
 #respond input[type=text], textarea {
-	width: 620px;
+	width: 680px;
 	height: 90px;
 	border: 1px solid var(--textcolor);
 }
@@ -2022,7 +2022,7 @@ border-radius: initial;
 
 /* sidebar */
 .sidebar_portfolio {
-		margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .sidebar_portfolio-text {
@@ -2041,16 +2041,16 @@ border-radius: initial;
 .sidebar_portfolio-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 1rem;
+	grid-gap: 0.3rem;
 }
 
 .sidebar_portfolio-gitem {
-	border-radius: 5px;
 	width: 60px;
 	height: 50px;
 }
 
 .sidebar_portfolio-gitem a img {
+  border-radius: 5px;
   width: 100%;
   height: 100%;
 }
