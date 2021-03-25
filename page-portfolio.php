@@ -19,7 +19,7 @@ get_header();
 <?php get_template_part( 'template-parts/features-section', get_post_type() ); ?>
 <div class="image_gallery-text">
   <p class="image_gallery-texthead">DESIGN IS THE SOUL</p>
-  <div>
+  <div class="portfolio-btn">
   <?php
         $categories = get_categories(array('hide_empty' => false));
         foreach ( $categories as $category ) {

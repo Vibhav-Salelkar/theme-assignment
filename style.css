@@ -1808,6 +1808,12 @@ border-radius: initial;
 		padding: 7px;
 		margin-bottom: 2.5rem;
 		cursor: pointer;
+		margin-left: 0rem;
+		margin-right: 0.6rem;
+	}
+	.portfolio-btn {
+		margin-bottom: 2rem;
+		margin-left: 0rem;
 	}
 }
 
@@ -1819,8 +1825,15 @@ border-radius: initial;
 		border-radius: 5px;
 		font-weight: normal;
 		padding: 7px;
+		margin-top: 1rem;
 		margin-bottom: 2.5rem;
 		cursor: pointer;
+		margin-left: 0rem;
+		margin-right: 0.6rem;
+	}
+	.portfolio-btn {
+		margin-bottom: 2.5rem;
+		margin-left: 0rem;
 	}
 }
 
