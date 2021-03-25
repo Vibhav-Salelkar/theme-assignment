@@ -2216,44 +2216,54 @@ border-radius: initial;
 
 
 /*archive sidebar */
-.widget-area .widget_archive .widget-title {
+.widget_archive .widget-title {
 	font-size: 25px;
 	color: var(--textcolor);
 	text-shadow: 2px #fff;
 	margin: 0.5rem 0;
 	font-weight: normal;
+	position: relative;
 }
 
-.widget-area .widget_archive ul {
+.widget_archive .widget-title::after {
+	content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px; 
+    background: black; 
+    top: 100%;
+    left: 0;
+}
+
+.widget_archive ul {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
 }
 
-.widget-area .widget_archive ul li {
+.widget_archive ul li {
 	margin-bottom: 5px;
 }
 
-.widget-area .widget_archive li a {
-	font-size: 1rem;
-	color: #62585f;
+.widget_archive li a {
+	font-size: 0.875rem;
+	font-weight: normal;
+	color: var(--textcolor);
 	display: flex;
 	align-items: center;
 	text-decoration: none;
 }
 
-.widget-area .widget_archive li a:hover {
+.widget_archive li a:hover {
 	text-decoration: none;
 	color: var(--secondarycolor);
 }
 
-.widget-area .widget_archive li a:before {
-	content: '';
-	background-image: url('../assets/img/pagination-arrow.png');
-	height: 10px;
+.widget_archive li a:before {
+	content: '>';
+	height: 6px;
 	width: 4px;
+	margin-bottom: 14px;
 	display: inline-block;
-	background-position: center;
-	background-size: cover;
-	margin-right: 5px;
+	margin-right: 10px;
 }

@@ -274,3 +274,11 @@ function it_custom_excerpt_length( $length ) {
     return 20;
 }
 add_filter( 'excerpt_length', 'it_custom_excerpt_length', 999 );
+
+
+//registering custom post type to archive
+add_filter( 'getarchives_where', function ( $where )
+{
+    $where = str_replace( "post_type = 'post'", "post_type IN ( 'post', 'it-portfolio' )", $where );
+    return $where;
+});
