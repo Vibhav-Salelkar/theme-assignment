@@ -16,8 +16,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 </aside><!-- #secondary -->
 
 
-<?php
 
+<?php
 /*
 
 <aside id="secondary" class="widget-area">

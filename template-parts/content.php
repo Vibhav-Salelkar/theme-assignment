@@ -74,7 +74,7 @@
   		</div> -->
  </div>
  <div class="blog-sidebar">
-		<?php get_sidebar(); ?>
+		<?php dynamic_sidebar( 'sidebar-2' ); ?>
  </div>
 
 </div>

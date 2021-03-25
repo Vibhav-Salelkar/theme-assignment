@@ -1,22 +1,18 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * Template Name: category.
+ * The template for displaying author archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Initial_Theme
+ * @package DsignFly
  */
 
 get_header();
-?>
 
-<!-- render features section -->
-<?php get_template_part( 'template-parts/features-section', get_post_type() ); ?>
+get_template_part( 'template-parts/features-section', get_post_type() ); 
+
+?>
 <div class="image_gallery-text">
   <p class="image_gallery-texthead">DESIGN IS THE SOUL</p>
   <div>
@@ -36,22 +32,29 @@ get_header();
       ?>
   </div>
 </div>
+
 <hr class="line-break" style="margin-top: -0.2rem;">
 <div class="grid_container grid_container-columns-3" style="margin-bottom: 2rem;">
-  <?php
-  $posts_per_page = get_option( 'posts_per_page' ); //admin->settings
 
-  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
-  $args = array(
-      'post_type'      => 'it-portfolio',
-      'post_status'    => 'publish',
-      'posts_per_page' => $posts_per_page,
-      'paged'          => $paged,
-      'nopaging'       => false,    
-  );
-  $query = new WP_Query( $args );
+<?php
 
-  if ( $query -> have_posts() ):
+$posts_per_page = get_option( 'posts_per_page' ); //admin->settings
+
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$id    = get_query_var( 'cat' );
+// $id    = $_GET['cat'];
+$query = new WP_Query(
+	array(
+		'post_type'      => array( 'it-portfolio', 'post' ),
+		'posts_per_page' => $posts_per_page,
+		'paged'          => $paged,
+		'cat'            => $id,
+		'nopaging'       => false,    
+	)
+);
+?>
+<?php
+if ( $query -> have_posts() ):
     while ( $query -> have_posts() ):
       $query -> the_post();
       ?>

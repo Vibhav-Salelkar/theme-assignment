@@ -1776,14 +1776,22 @@ border-radius: initial;
 
 
 /* Portfolio Page */
-.portfolio-tabs {
+
+.portfolio-tabs{
 	color: white;
+	text-decoration: none;
 	background-color: #222;
 	font-size: 1rem;
 	border-radius: 5px;
 	font-weight: normal;
 	padding: 10px;
 	cursor: pointer;
+	margin-left: 0.7rem;
+}
+
+.portfolio-tabs:visited {
+	color: white;
+	background-color: #222;
 }
 
 .portfolio-tabs:hover {
@@ -2206,3 +2214,46 @@ border-radius: initial;
 	height: 2rem;
 }
 
+
+/*archive sidebar */
+.widget-area .widget_archive .widget-title {
+	font-size: 25px;
+	color: var(--textcolor);
+	text-shadow: 2px #fff;
+	margin: 0.5rem 0;
+	font-weight: normal;
+}
+
+.widget-area .widget_archive ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.widget-area .widget_archive ul li {
+	margin-bottom: 5px;
+}
+
+.widget-area .widget_archive li a {
+	font-size: 1rem;
+	color: #62585f;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.widget-area .widget_archive li a:hover {
+	text-decoration: none;
+	color: var(--secondarycolor);
+}
+
+.widget-area .widget_archive li a:before {
+	content: '';
+	background-image: url('../assets/img/pagination-arrow.png');
+	height: 10px;
+	width: 4px;
+	display: inline-block;
+	background-position: center;
+	background-size: cover;
+	margin-right: 5px;
+}
