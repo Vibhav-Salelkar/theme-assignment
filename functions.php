@@ -170,6 +170,10 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+/**
+ * widget file addition.
+ */
+require get_template_directory() . '/inc/widgets.php';
 
 /**
  * Load Jetpack compatibility file.
