@@ -1849,6 +1849,38 @@ textarea {
 	color: white;
 }
 
+/*customizing default comment*/
+.children {
+	list-style: none;
+}
+
+.logged-in-as {
+	display: none;
+}
+
+#reply-title {
+	display: none;
+}
+
+#respond input[type=text], textarea {
+	width: 620px;
+	height: 90px;
+	border: 1px solid var(--textcolor);
+}
+
+.form-submit {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#submit {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #222;
+	font-size: 0.875rem;
+	color: white;
+} 
+
 .comment_card-meta {
 	color: var(--textcolor);
 	font-size: 0.813rem;
@@ -2132,3 +2164,5 @@ textarea {
 	height: 2rem;
 }
 
+
+	  

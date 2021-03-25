@@ -20,7 +20,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<?php
 			$query_images_args = array(
 			'post_type'      => 'it-portfolio',
-			'posts_per_page' => 6,
+			'posts_per_page' => 8,
 			);
 		  
 			$query = new WP_Query( $query_images_args );

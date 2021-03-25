@@ -53,7 +53,7 @@
 		}
 		?>
 		<br>
-		<hr>
+		<!-- <hr>
 		<p style="margin:0px; font-size:1.125rem;">Post your comment</p>
 		<textarea class="individual_post-textarea" name="comment" rows="8" cols="80"></textarea>
 		<br>
@@ -71,7 +71,7 @@
 		<br>
 		<div class="btnbox">
 			<button class="form-btn" type="submit" name="button">Submit</button>
-  	</div>
+  		</div> -->
  </div>
  <div class="blog-sidebar">
 		<?php get_sidebar(); ?>
