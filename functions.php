@@ -282,3 +282,13 @@ add_filter( 'getarchives_where', function ( $where )
     $where = str_replace( "post_type = 'post'", "post_type IN ( 'post', 'it-portfolio' )", $where );
     return $where;
 });
+
+//registering archive page to custom post types
+add_action( 'pre_get_posts', function ( $query ) 
+{
+  if (    !is_admin() 
+       && $query->is_main_query() 
+       && $query->is_archive()
+   )
+     $query->set( 'post_type', array( 'post', 'it-portfolio' ) );
+});

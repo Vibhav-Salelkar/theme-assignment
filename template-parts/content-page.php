@@ -10,15 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<header class="archive-header">
+		<?php the_title( '<h4 class="entry-title">', '</h4>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php initial_theme_post_thumbnail(); ?>
+	<div class="archive-thumbnail">	
+		<?php initial_theme_post_thumbnail(); ?>
+	</div>
 
-	<div class="entry-content">
+	<div class="archive-content">
 		<?php
-		the_content();
+		the_excerpt();
 
 		wp_link_pages(
 			array(
@@ -30,7 +32,7 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+		<footer class="archive-footer">
 			<?php
 			edit_post_link(
 				sprintf(
