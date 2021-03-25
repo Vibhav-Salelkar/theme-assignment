@@ -56,7 +56,7 @@ endif;
 wp_reset_postdata();
 ?>
 
-<div style="@media (min-wddth: 701px) { display: flex; justify-content: flex-end; }">
+<div style="display: flex; justify-content: flex-end">
   <!-- Pagination bar:template-functions-->
   <?php it_pagination_bar( $the_query ); ?>
 </div>
