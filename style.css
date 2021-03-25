@@ -1696,14 +1696,41 @@ textarea {
 	margin-bottom: 2rem;
 }
 
-.paginate span {
+.paginate-arrow-left {
+	transform: rotate(-180deg);
+}
+  
+.paginate .pagination-current {
+font-size: 1rem;
+color: var(--textcolor);
+}
+
+.paginate .page-numbers {
 	width: 30px;
 	height: 28px;
 	color: #222;
 	font-size: 1rem;
 	border-radius: 3px;
 	text-align: center;
+	text-decoration: none;
+	font-weight: normal;
 }
+  
+.paginate .page-numbers:hover,
+.paginate .page-numbers.current {
+text-decoration: none;
+background-color: #ef4634;
+color: #FFF;
+border-radius: 3px;
+}
+  
+.paginate .page-numbers.dots:hover {
+text-decoration: none;
+background-color: initial;
+color: initial;
+border-radius: initial;
+}
+  
 
 @media only screen and (max-width: 700px){
 .paginate {
@@ -1713,7 +1740,12 @@ textarea {
 	margin-bottom: 1rem;
 }
 
-.paginate span {
+.paginate .pagination-current {
+	font-size: 1rem;
+	color: var(--textcolor);
+}
+	
+.paginate .page-numbers {
 	width: 15px;
 	height: 15px;
 	color: #222;
@@ -1721,22 +1753,27 @@ textarea {
 	font-size: 1rem;
 	border-radius: 3px;
 	text-align: center;
+	text-decoration: none;
+	font-weight: normal;
 }
+
+.paginate-arrow-left {
+	transform: scaleX(-1);
+}
+
+.dashicons-controls-play {
+	font-size: 1rem;
+	width: 15px;
+	height: 15px;
+	color: #222;
+}
+
 }
 
 .dashicons-controls-play {
 	margin-top: 0.2rem;
 }
 
-.paginate--current {
-	background-color: var(--secondarycolor);
-	color: white !important;
-}
-
-.paginate span:hover {
-	background-color: var(--secondarycolor);
-	color: white;
-}
 
 /* Portfolio Page */
 .portfolio-tabs {
@@ -2164,5 +2201,3 @@ textarea {
 	height: 2rem;
 }
 
-
-	  

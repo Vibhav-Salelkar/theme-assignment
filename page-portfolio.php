@@ -28,12 +28,17 @@ get_header();
 <hr class="line-break" style="margin-top: -0.2rem;">
 <div class="grid_container grid_container-columns-3" style="margin-bottom: 2rem;">
   <?php
-  $query_images_args = array(
-  'post_type'      => 'it-portfolio',
-  'posts_per_page' => -1,
-  );
+  $posts_per_page = get_option( 'posts_per_page' ); //admin->settings
 
-  $query = new WP_Query( $query_images_args );
+  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
+  $args = array(
+      'post_type'      => 'it-portfolio',
+      'post_status'    => 'publish',
+      'posts_per_page' => $posts_per_page,
+      'paged'          => $paged,
+      'nopaging'       => false,    
+  );
+  $query = new WP_Query( $args );
 
   if ( $query -> have_posts() ):
     while ( $query -> have_posts() ):
@@ -58,12 +63,9 @@ get_header();
   ?>
 </div>
 
-<div class="paginate">
-  <span class="paginate--current">1</span>
-  <span>2</span>
-  <span>3</span>
-  <span class="dashicons dashicons-controls-play"></span>
-</div>
+<!-- Pagination bar:template-functions-->
+<?php it_pagination_bar( $query ); ?>
+
 <hr class="line-break">
 
 <div id="myModal" class="modal">

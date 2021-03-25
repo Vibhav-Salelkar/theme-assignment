@@ -35,3 +35,37 @@ function initial_theme_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'initial_theme_pingback_header' );
+
+
+//customized pagination
+function it_pagination_bar( $custom_query ) {
+
+	$total_pages = $custom_query->max_num_pages;
+	$big         = 999999999; // need an unlikely integer
+
+	if ( $total_pages > 1 ) {
+		$current_page = max( 1, get_query_var( 'paged' ) );
+
+		$pages = paginate_links(
+			array(
+				'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'    => '?paged=%#%',
+				'current'   => $current_page,
+				'total'     => $total_pages,
+				'type'      => 'array',
+				'prev_text' => '<span class="dashicons dashicons-controls-play paginate-arrow-left"></span>',
+				'next_text' => '<span class="dashicons dashicons-controls-play"></span>',
+			)
+		);
+
+		/* for echoing out with custom html tags */
+		if ( is_array( $pages ) ) {
+			$paged = ( get_query_var( 'paged' ) == 0 ) ? 1 : get_query_var( 'paged' );
+			echo '<div class="paginate">';
+			foreach ( $pages as $page ) {
+					echo $page;
+			}
+			echo '</div>';
+		}
+	}
+}

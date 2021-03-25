@@ -1,9 +1,16 @@
 
 <?php
-$args = array(   'post_type' => 'it-portfolio',
-'posts_per_page' => 5 );
+  $posts_per_page = get_option( 'posts_per_page' ); //admin->settings
 
-$the_query = new WP_Query( $args );
+  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
+  $args = array(
+      'post_type'      => 'it-portfolio',
+      'post_status'    => 'publish',
+      'posts_per_page' => $posts_per_page,
+      'paged'          => $paged,
+      'nopaging'       => false,    
+  );
+  $the_query = new WP_Query( $args );
 
 if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -48,3 +55,9 @@ else:
 endif;
 wp_reset_postdata();
 ?>
+
+<div style="display: flex; justify-content: flex-end;">
+  <!-- Pagination bar:template-functions-->
+  <?php it_pagination_bar( $the_query ); ?>
+</div>
+
