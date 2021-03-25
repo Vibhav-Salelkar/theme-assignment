@@ -256,7 +256,7 @@ add_action( 'init', 'it_custom_post_type' );
 
 //custom excerpt: refered wordpress docs
 function it_custom_excerpt_length( $length ) {
-    return 25;
+    return 20;
 }
 add_filter( 'excerpt_length', 'it_custom_excerpt_length', 999 );
 
