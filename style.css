@@ -1441,6 +1441,7 @@ textarea {
 .blog-sidebar {
 	justify-self: center;
 	margin-left: 2.2rem;
+	margin-top: 0.5rem;
 }
 
 .blog-custom-title {

@@ -186,3 +186,22 @@ function it_gallery($wp_customize) {
 }
 
 add_action('customize_register','it_gallery');
+
+function it_blog_text($wp_customize) {
+	$wp_customize->add_section('it_blog_section' ,array(
+		'title'=>'Blog Page'
+	));
+
+	$wp_customize->add_setting('it_blog_headline', array(
+		'default'=> "LET'S BLOG"
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'it_blog_headline_control' ,array(
+		'label'=>'Blog Headline',
+		'section'=>'it_blog_section',
+		 'settings'=>'it_blog_headline'
+	)));
+
+}
+
+add_action('customize_register','it_blog_text');

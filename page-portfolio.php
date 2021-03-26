@@ -18,7 +18,7 @@ get_header();
 <!-- render features section -->
 <?php get_template_part( 'template-parts/features-section', get_post_type() ); ?>
 <div class="image_gallery-text">
-  <p class="image_gallery-texthead">DESIGN IS THE SOUL</p>
+  <p class="image_gallery-texthead"><?php echo get_theme_mod('it_gallery_headline'); ?></p>
   <div class="portfolio-btn">
   <?php
         $categories = get_categories(array('hide_empty' => false));
