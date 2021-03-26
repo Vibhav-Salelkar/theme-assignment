@@ -91,7 +91,7 @@ get_header();
   <span class="close">&times;</span>
   <div class="custom-modal">
     <img class="modal-content" id="img01">
-    <div style="display:flex; justify-content: space-between; align-items:center; margin-top: 1.5rem;">
+    <div class="modal-desc">
       <span class="dashicons dashicons-arrow-left-alt"></span>
       <p class="modal-cap">Lorem ipsum anion jarsa lorem</p>
       <span class="dashicons dashicons-arrow-right-alt"></span>

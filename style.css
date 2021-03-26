@@ -1480,7 +1480,7 @@ textarea {
 
 	.blog-sidebar {
 		justify-self: start;
-		margin-top: 3rem;
+		margin: 3rem auto;
 	}
 
 	.blog-custom-title {
@@ -1688,7 +1688,13 @@ textarea {
 		margin-bottom: 0.8rem;
 		color: var(--secondarycolor);
 	}
-
+	.post-divider {
+		margin-top: -0.8rem;
+		margin-bottom: 0.8rem;
+		background-color: var(--textcolor);
+		border-top: 0.5px solid var(--textcolor);
+		height: 0px;
+	}
 }
 
 .paginate {
@@ -1994,6 +2000,12 @@ border-radius: initial;
 
 
 @media only screen and (max-width: 700px){
+	.individual_post_container {
+		width: 100%;
+		margin: auto;
+		overflow: hidden;
+	}
+
 	.individual_post h1 {
 		font-size: 1.888rem;
 		color: var(--textcolor);
@@ -2030,6 +2042,9 @@ border-radius: initial;
 		font-size: 1.2rem;
 		color: var(--textcolor);
 		background-color: #fff;
+	}
+	.comment-form-comment textarea {
+		width: 100%;
 	}
 
 }
@@ -2145,8 +2160,8 @@ border-radius: initial;
   margin: auto;
   display: block;
   width: 800px;
-	height: 460px;
-	border-radius: 5px;
+  height: 460px;
+  border-radius: 5px;
 }
 
 #caption {
@@ -2207,11 +2222,91 @@ border-radius: initial;
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
+.modal-desc {
+	display:flex; 
+	justify-content: space-between; 
+	align-items:center; 
+	margin-top: 1.5rem;
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1298px){
+	.close {
+		position: absolute;
+		top: 6.25rem;
+		border: none;
+		right: 5rem;
+		color: #333;
+		background-color: #fff;
+		font-size: 23px;
+		font-weight: 600;
+		transition: 0.3s;
+		line-height: 2.2rem;
+		width: 35px;
+		height: 35px;
+		text-align: center;
+	}
+
+
+}
+
 @media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
+		
+	.modal-content {
+		margin: auto;	
+		display: block;
+		width: 100%;
+		height: 40%;
+		border-radius: 5px;
+	}
+	
+	#caption {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 400px;
+		text-align: center;
+		color: #333;
+	}
+	
+	.modal-cap {
+		margin: 0rem;
+		text-align: center;
+		font-size: 1.125rem;
+		padding: 0;
+		font-weight: 600;
+		color: var(--textcolor);
+	}
+	
+	.custom-modal {
+		background-color: white;
+		padding: 10px 10px 10px 10px;
+		margin: 0 auto;
+		width: 60%;
+		height: auto;
+	}
+	
+	.close {
+		position: absolute;
+		top: 14.3rem;
+		border: none;
+		right: 8.4rem;
+		color: #333;
+		background-color: #fff;
+		font-size: 15px;
+		font-weight: 600;
+		transition: 0.3s;
+		line-height: 2.2rem;
+		width: 19px;
+		height: 19px;
+		text-align: center;
+	}
+
+	.modal-desc {
+		display:flex; 
+		justify-content: space-between; 
+		align-items:center; 
+		margin-top: 1rem;
+	}
 }
 
 /*stylings for footer social icons*/
@@ -2362,4 +2457,10 @@ border-radius: initial;
 	text-decoration: none;
 	color: white;
 	font-weight: 500;
+  }
+
+  @media only screen and (max-width: 700px){
+	.portfolio-images-overlay {
+		display: none;
+	}
   }

@@ -10,7 +10,7 @@
 ?>
 
 <div class="blog-custom">
-	<div>
+	<div class="individual_post_container">
 		<header class="individual_post">
 			<h1><?php the_title(); ?></h1>
 			<br>
