@@ -1544,7 +1544,7 @@ textarea {
 	font-size: 13px;
 	color: var(--textcolor);
 	justify-content: space-between;
-	margin: -1.7rem 0.2rem 0.2rem 0.2rem;
+	margin: -1.5rem 0.2rem 0.2rem 0.2rem;
 	align-items: center;
 }
 
@@ -2242,7 +2242,7 @@ border-radius: initial;
 	content: '';
     position: absolute;
     width: 100%;
-    height: 1px; 
+    height: 0.5px; 
     background: black; 
     top: 100%;
     left: 0;
@@ -2252,10 +2252,12 @@ border-radius: initial;
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
+	color: var(--textcolor);
 }
 
 .widget_archive ul li {
 	margin-bottom: 5px;
+	color: var(--textcolor);
 }
 
 .widget_archive li a {
@@ -2269,7 +2271,7 @@ border-radius: initial;
 
 .widget_archive li a:hover {
 	text-decoration: none;
-	color: var(--secondarycolor);
+	color: var(--textcolor);
 }
 
 .widget_archive li a:before {
@@ -2308,5 +2310,3 @@ border-radius: initial;
 	margin-bottom: 0.8rem;
 	line-height: 21px;
 }
-
-
