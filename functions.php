@@ -292,3 +292,18 @@ add_action( 'pre_get_posts', function ( $query )
    )
      $query->set( 'post_type', array( 'post', 'it-portfolio' ) );
 });
+
+
+function wpsites_modify_comment_form_text_area($arg) {
+    $arg['comment_field'] = '<p class="comment-form-comment"><label for="comment">' . _x( 'Post your comment', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="1" aria-required="true"></textarea></p>';
+    return $arg;
+}
+
+add_filter('comment_form_defaults', 'wpsites_modify_comment_form_text_area');
+
+
+function wpsites_change_comment_form_submit_label($arg) {
+	$arg['label_submit'] = 'Submit';
+		 return $arg;
+	}
+add_filter('comment_form_defaults', 'wpsites_change_comment_form_submit_label');

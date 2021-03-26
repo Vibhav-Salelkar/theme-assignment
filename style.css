@@ -2464,3 +2464,17 @@ border-radius: initial;
 		display: none;
 	}
   }
+
+#respond input[type=text]:focus,
+input[type=email]:focus, 
+input[type=url]:focus,
+textarea:focus {
+	width: 195px;
+	height: 30px;
+	border:  1px solid var(--textcolor) !important;
+	display: inline-block;
+}
+
+.comment-form-author, .comment-form-email, .comment-form-url {
+	display: inline-block;
+}
